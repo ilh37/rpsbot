@@ -23,9 +23,6 @@ def main():
 			n = 2
 		elif s == 'q':
 			break
-		elif s == 'x':
-			print(m.unigrams)
-			continue
 		else:
 			print('Please type a valid input.')
 			continue		
