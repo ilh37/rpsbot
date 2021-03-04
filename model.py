@@ -21,17 +21,17 @@ class RPSModel:
 		if h[0] is not None:
 			weights += 0.5 * normalize(self.unigrams[h[0]])
 		else:
-			weights += np.array([1,1,1])
+			weights += 0.5 * np.array([1,1,1])
 
 		if h[1] is not None:
 			weights += 0.3 * normalize(self.bigrams[h[0]][h[1]])
 		else:
-			weights += np.array([1,1,1])
+			weights += 0.3 * np.array([1,1,1])
 
 		if h[2] is not None:
 			weights += 0.2 * normalize(self.trigrams[h[0]][h[1]][h[2]])
 		else:
-			weights += np.array([1,1,1])
+			weights += 0.2 * np.array([1,1,1])
 		
 		self.prediction = np.random.choice([1,2,0], p=normalize(weights))
 		return self.prediction
